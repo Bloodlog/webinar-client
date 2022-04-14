@@ -1,0 +1,90 @@
+[
+  {
+    "id": "8577621",
+    "status": "ACTIVE",
+    "access": "4",
+    "rule": "FREQ=DAILY;COUNT=1",
+    "exceptionDates": "a:2:{i:0;O:8:\"DateTime\":3:{s:4:\"date\";s:26:\"2021-04-28 15:44:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:13:\"Europe\/Moscow\";}i:1;O:8:\"DateTime\":3:{s:4:\"date\";s:26:\"2021-05-24 09:30:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:13:\"Europe\/Moscow\";}}",
+    "name": "Анализ",
+    "startsAt": "2021-05-24T09:30:00+0300",
+    "endsAt": "2021-06-24T23:59:00+0300",
+    "isArchive": "0",
+    "createUserId": "23734466",
+    "type": "webinar",
+    "estimatedAt": "2021-05-24T09:30:00+0300",
+    "isAuto": false,
+    "timezoneName": "Europe\/Moscow",
+    "image": "https:\/\/events.webinar.ru\/images\/event-default.png",
+    "lector": "",
+    "eventSessions": [
+      {
+        "id": "8762033",
+        "status": "ACTIVE",
+        "access": "4",
+        "name": "Анализ ",
+        "startsAt": "2021-05-24T09:30:00+0300",
+        "isArchive": "0",
+        "eventId": "8577621",
+        "createUserId": "23734466",
+        "type": "webinar",
+        "estimatedAt": "2021-05-24T09:30:00+0300",
+        "isAuto": false,
+        "timezoneName": "Europe\/Moscow",
+        "image": "https:\/\/events.webinar.ru\/images\/event-default.png",
+        "participationsCount": 174,
+        "lector": "",
+        "tags": [],
+        "files": [],
+        "lectors": [
+        ]
+      }
+    ],
+    "tags": [],
+    "files": [],
+    "lectors": [
+    ]
+  },
+  {
+    "id": "8621203",
+    "status": "ACTIVE",
+    "access": "1",
+    "rule": "FREQ=DAILY;COUNT=1",
+    "exceptionDates": "a:2:{i:0;O:8:\"DateTime\":3:{s:4:\"date\";s:26:\"2021-05-11 17:07:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:13:\"Europe\/Moscow\";}i:1;O:8:\"DateTime\":3:{s:4:\"date\";s:26:\"2021-05-25 10:00:00.000000\";s:13:\"timezone_type\";i:3;s:8:\"timezone\";s:13:\"Europe\/Moscow\";}}",
+    "name": "Тест ",
+    "startsAt": "2021-05-25T10:00:00+0300",
+    "endsAt": "2021-06-25T23:59:00+0300",
+    "isArchive": "0",
+    "createUserId": "23734466",
+    "type": "webinar",
+    "estimatedAt": "2021-05-25T10:00:00+0300",
+    "isAuto": false,
+    "timezoneName": "Europe\/Moscow",
+    "lector": "",
+    "eventSessions": [
+      {
+        "id": "8811083",
+        "status": "ACTIVE",
+        "access": "1",
+        "name": "Тест",
+        "startsAt": "2021-05-25T10:00:00+0300",
+        "isArchive": "0",
+        "eventId": "8621203",
+        "createUserId": "23734466",
+        "type": "webinar",
+        "estimatedAt": "2021-05-25T10:00:00+0300",
+        "isAuto": false,
+        "timezoneName": "Europe\/Moscow",
+        "participationsCount": 0,
+        "lector": "",
+        "tags": [],
+        "files": [],
+        "lectors": [
+        ]
+      }
+    ],
+    "tags": [],
+    "files": [],
+    "lectors": [
+    ]
+  }
+]

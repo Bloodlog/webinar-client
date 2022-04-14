@@ -1,0 +1,9 @@
+{
+  "error": {
+    "code": 400,
+    "message": "ERROR_BAD_REQUEST",
+    "fieldErrors": {
+      "email": "ERROR_EMPTY"
+    }
+  }
+}

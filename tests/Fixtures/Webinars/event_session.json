@@ -1,0 +1,58 @@
+{
+  "id": 10842945,
+  "name": "Новое мероприятие сегодня",
+  "description": "TEST",
+  "status": "ACTIVE",
+  "access": 4,
+  "lang": "RU",
+  "startsAt": "2022-02-22T11:16:00+0300",
+  "utcStartsAt": 1645517760,
+  "createUserId": 23734466,
+  "timezoneId": 1,
+  "timezone": {
+    "id": 1,
+    "name": "Europe/Moscow",
+    "description": "Волгоград, Москва, Санкт-Петербург",
+    "offset": 10800
+  },
+  "organizationId": 1234356,
+  "type": "webinar",
+  "createUser": {
+    "id": 123,
+    "name": "Test Company",
+    "secondName": "test",
+    "email": "example@example.ru"
+  },
+  "image": {
+    "id": 421,
+    "createAt": "2022-02-22T11:16:30+0300",
+    "name": "DEFAULT",
+    "thumbnails": {},
+    "typeFile": "",
+    "type": "",
+    "url": "https://events.webinar.ru/images/event-default.png",
+    "downloadUrl": "https://events.webinar.ru/images/event-default.png",
+    "size": 0,
+    "mimeType": "",
+    "uri": "//events.webinar.ru/images/event-default.png"
+  },
+  "startType": "manual",
+  "additionalFields": [
+    {
+      "key": "56fe7c000b4645bd1920d27dfec3e9b8",
+      "label": "Ваш город",
+      "type": "text",
+      "isRequired": true
+    },
+    {
+      "key": "cea75f8cd36a4f8567d5068b7e7e05e7",
+      "label": "referrer",
+      "type": "text",
+      "isRequired": true
+    }
+  ],
+  "lectors": [],
+  "tags": [],
+  "announceFiles": [],
+  "files": []
+}
