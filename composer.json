@@ -1,0 +1,36 @@
+{
+  "name": "bloodlog/webinar-client",
+  "description": "PHP client for webinar.ru",
+  "type": "library",
+  "require": {
+    "php": "^7.4|^8.0",
+    "guzzlehttp/guzzle": "^6.2|^7.0.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.4",
+    "orchestra/testbench": "6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bloodlog\\WebinarClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra" : {
+    "laravel" : {
+      "providers" : [
+        "Bloodlog\\WebinarClient\\Providers\\WebinarClientProvider"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "Bloodlog",
+      "email": "fm@web-fomin.ru"
+    }
+  ]
+}
