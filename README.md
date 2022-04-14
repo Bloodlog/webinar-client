@@ -6,6 +6,11 @@
 ![](https://img.shields.io/badge/Laravel-^6.0-red)
 ![](https://img.shields.io/badge/version-1.0.0-lightgrey)
 
+```bash 
+composer require bloodlog/webinar-client
+```
+
+
 Подключение:
 1. Опубликовать конфиг и провайдер:
 ```bash 
