@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/PHP-^7.4-blue)
 ![](https://img.shields.io/badge/PHP-^8.0-blue)
 ![](https://img.shields.io/badge/Laravel-^6.0-red)
-![](https://img.shields.io/badge/version-0.0.1-lightgrey)
+![](https://img.shields.io/badge/version-1.0.0-lightgrey)
 
 Подключение:
 1. Опубликовать конфиг и провайдер:
