@@ -12,9 +12,9 @@ composer require bloodlog/webinar-client
 
 
 Подключение:
-1. Опубликовать конфиг и провайдер:
+1. Опубликовать конфиг:
 ```bash 
-php artisan vendor:publish
+php artisan vendor:publish --provider="Bloodlog\WebinarClient\Providers\WebinarClientProvider"   
 ```
 2. Получить API Token для доступа к webinar.ru и добавить в конфиг:
 
