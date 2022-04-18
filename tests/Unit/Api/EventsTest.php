@@ -9,7 +9,7 @@ use GuzzleHttp\Handler\MockHandler;
 use Bloodlog\WebinarClient\Api\Api;
 use GuzzleHttp\Client as HttpClient;
 use Bloodlog\WebinarClient\Api\Events;
-use Bloodlog\WebinarClient\Exception\WebinarException;
+use Bloodlog\WebinarClient\Exception\ClientResponseException;
 
 class EventsTest extends TestCase
 {
@@ -43,7 +43,7 @@ class EventsTest extends TestCase
         $response = $client->webinarsRequest();
 
         $this->assertEquals('8762033', $response[0]->eventSessions[0]->id);
-        $this->assertEquals('Анализ ключевых изменений в эксплуатации зданий (сооружений) за первое полугодие 2021 года', $response[0]->eventSessions[0]->name);
+        $this->assertEquals('Анализ ', $response[0]->eventSessions[0]->name);
     }
 
     /**
@@ -85,7 +85,7 @@ class EventsTest extends TestCase
      */
     public function testFailEvents()
     {
-        $this->expectException(WebinarException::class);
+        $this->expectException(ClientResponseException::class);
         $this->expectExceptionCode(404);
         $handlerStack = HandlerStack::create(new MockHandler([
             new Response(404, [], $this->fixture('404')),

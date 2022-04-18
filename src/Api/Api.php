@@ -2,6 +2,7 @@
 
 namespace Bloodlog\WebinarClient\Api;
 
+use Bloodlog\WebinarClient\Exception\ClientResponseException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Bloodlog\WebinarClient\Response\Response;
@@ -41,6 +42,12 @@ class Api
             $response = $this->client->request('GET', $this->version
                 . $uri, ['query' => $query]);
         } catch (ClientException $e) {
+            if ($e->hasResponse()) {
+                $errors = json_decode((string)$e->getResponse()->getBody(), true, 512, JSON_THROW_ON_ERROR);
+                if (array_key_exists('error', $errors)) {
+                    throw new ClientResponseException($errors['error']['message'], $e->getResponse()->getStatusCode(), $e);
+                }
+            }
             throw new WebinarException($e->getMessage(), $e->getCode(), $e);
         }
 
