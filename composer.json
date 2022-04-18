@@ -1,6 +1,12 @@
 {
   "name": "bloodlog/webinar-client",
   "description": "PHP client for webinar.ru",
+  "keywords": ["client", "api", "webinar.ru", "webinar"],
+  "support": {
+    "issues": "https://github.com/Bloodlog/webinar-client/issues",
+    "source": "https://github.com/Bloodlog/webinar-client/issues"
+  },
+  "homepage": "https://github.com/Bloodlog/webinar-client",
   "type": "library",
   "require": {
     "php": "^7.4|^8.0",
@@ -21,6 +27,7 @@
       "Tests\\": "tests/"
     }
   },
+  "prefer-stable": true,
   "extra" : {
     "laravel" : {
       "providers" : [
@@ -28,10 +35,13 @@
       ]
     }
   },
+  "license": "MIT",
   "authors": [
     {
       "name": "Bloodlog",
-      "email": "fm@web-fomin.ru"
+      "email": "fm@web-fomin.ru",
+      "homepage": "https://web-fomin.ru",
+      "role": "Developer"
     }
   ]
 }
