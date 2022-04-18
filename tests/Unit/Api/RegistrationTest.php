@@ -9,7 +9,7 @@ use GuzzleHttp\Handler\MockHandler;
 use Bloodlog\WebinarClient\Api\Api;
 use GuzzleHttp\Client as HttpClient;
 use Bloodlog\WebinarClient\Api\Registration;
-use Bloodlog\WebinarClient\Exception\WebinarException;
+use Bloodlog\WebinarClient\Exception\ClientResponseException;
 
 class RegistrationTest extends TestCase
 {
@@ -87,7 +87,7 @@ class RegistrationTest extends TestCase
      */
     public function testFailRegister()
     {
-        $this->expectException(WebinarException::class);
+        $this->expectException(ClientResponseException::class);
         $this->expectExceptionCode(400);
         $handlerStack = HandlerStack::create(new MockHandler([
             new Response(400, [], $this->fixture('error_bad_request')),
