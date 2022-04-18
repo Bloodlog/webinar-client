@@ -38,20 +38,7 @@ class Api
      */
     public function get(string $uri, array $query = []): array
     {
-        try {
-            $response = $this->client->request('GET', $this->version
-                . $uri, ['query' => $query]);
-        } catch (ClientException $e) {
-            if ($e->hasResponse()) {
-                $errors = json_decode((string)$e->getResponse()->getBody(), true, 512, JSON_THROW_ON_ERROR);
-                if (array_key_exists('error', $errors)) {
-                    throw new ClientResponseException($errors['error']['message'], $e->getResponse()->getStatusCode(), $e);
-                }
-            }
-            throw new WebinarException($e->getMessage(), $e->getCode(), $e);
-        }
-
-        return $this->response->transform($response);
+        return $this->makeRequest('GET', $uri, $query);
     }
 
     /**
@@ -63,10 +50,32 @@ class Api
      */
     public function post(string $uri, array $query = [], array $form = []): array
     {
+        return $this->makeRequest('POST', $uri, $query, $form);
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array $query
+     * @param array $form
+     * @return array
+     * @throws ClientResponseException
+     * @throws WebinarException
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \JsonException
+     */
+    private function makeRequest(string $method, string $uri, array $query = [], array $form = []): array
+    {
         try {
-            $response = $this->client->request('POST', $this->version
+            $response = $this->client->request($method, $this->version
                 . $uri, ['query' => $query, 'form_params' => $form]);
         } catch (ClientException $e) {
+            if ($e->hasResponse()) {
+                $errors = json_decode((string)$e->getResponse()->getBody(), true, 512, JSON_THROW_ON_ERROR);
+                if (array_key_exists('error', $errors)) {
+                    throw new ClientResponseException($errors['error']['message'], $e->getResponse()->getStatusCode(), $e);
+                }
+            }
             throw new WebinarException($e->getMessage(), $e->getCode(), $e);
         }
 
