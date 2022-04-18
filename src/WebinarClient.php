@@ -44,7 +44,7 @@ class WebinarClient
     private function createClient()
     {
         return new HttpClient([
-            'base_uri' => config('webinar.base_url') . config('webinar.version_api'),
+            'base_uri' => config('webinar.base_url'),
             'headers' => [
                 'x-auth-token' => config('webinar.token'),
             ],

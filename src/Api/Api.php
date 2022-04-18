@@ -2,12 +2,10 @@
 
 namespace Bloodlog\WebinarClient\Api;
 
-use Bloodlog\WebinarClient\Exception\WebinarException;
-use Exception;
 use GuzzleHttp\Client;
-use Bloodlog\WebinarClient\Response\Response;
-use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ClientException;
+use Bloodlog\WebinarClient\Response\Response;
+use Bloodlog\WebinarClient\Exception\WebinarException;
 
 class Api
 {
@@ -40,7 +38,7 @@ class Api
     public function get(string $uri, array $query = []): array
     {
         try {
-            $response = $this->client->request('GET', '/api/' . $this->version
+            $response = $this->client->request('GET', $this->version
                 . $uri, ['query' => $query]);
         } catch (ClientException $e) {
             throw new WebinarException($e->getMessage(), $e->getCode(), $e);
@@ -59,7 +57,7 @@ class Api
     public function post(string $uri, array $query = [], array $form = []): array
     {
         try {
-            $response = $this->client->request('POST', '/api/' . $this->version
+            $response = $this->client->request('POST', $this->version
                 . $uri, ['query' => $query, 'form_params' => $form]);
         } catch (ClientException $e) {
             throw new WebinarException($e->getMessage(), $e->getCode(), $e);
