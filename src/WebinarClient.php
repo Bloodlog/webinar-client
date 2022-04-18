@@ -2,9 +2,11 @@
 
 namespace Bloodlog\WebinarClient;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Client as HttpClient;
 use Bloodlog\WebinarClient\Api\Events;
 use Bloodlog\WebinarClient\Api\Registration;
+use GuzzleHttp\ClientInterface;
 
 class WebinarClient
 {
@@ -33,7 +35,7 @@ class WebinarClient
     /**
      * @return HttpClient
      */
-    public function getClient()
+    public function getClient(): Client
     {
         return $this->client ?: $this->createClient();
     }
@@ -41,7 +43,7 @@ class WebinarClient
     /**
      * @return HttpClient
      */
-    private function createClient()
+    private function createClient(): Client
     {
         return new HttpClient([
             'base_uri' => config('webinar.base_url'),
@@ -49,5 +51,16 @@ class WebinarClient
                 'x-auth-token' => config('webinar.token'),
             ],
         ]);
+    }
+
+    /**
+     * @param ClientInterface $httpClient
+     * @return $this
+     */
+    public function setHttpClient(ClientInterface $httpClient): WebinarClient
+    {
+        $this->client = $httpClient;
+
+        return $this;
     }
 }
