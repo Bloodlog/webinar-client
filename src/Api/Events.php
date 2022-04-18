@@ -41,7 +41,7 @@ class Events extends Api
      */
     public function eventSessions(int $eventSessionId): array
     {
-        return $this->get('/organization/{$eventSessionId}');
+        return $this->get("/organization/{$eventSessionId}");
     }
 
     /**
@@ -58,7 +58,7 @@ class Events extends Api
     public function webinarsList(int $page = 1, int $perPage = 10, array $status = [], string $from = ''): array
     {
         $allowWebinars = [];
-        foreach ($this->webinarsRequest() as $webinar) {
+        foreach ($this->webinarsRequest($page, $perPage, $status, $from) as $webinar) {
             foreach ($webinar->eventSessions as $eventSession) {
                 if (!isset($eventSession->id) || !isset($eventSession->name)) {
                     continue;
