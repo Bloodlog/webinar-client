@@ -16,6 +16,12 @@ composer require bloodlog/webinar-client
 ```bash 
 php artisan vendor:publish --provider="Bloodlog\WebinarClient\Providers\WebinarClientProvider"   
 ```
+Или если автоматическая регистрация не работает, можно зарегистрировать провайдер с настройкой клиента в config/app.php:
+```php 
+'providers' => [
+    Bloodlog\WebinarClient\Providers\WebinarClientProvider::class,
+]
+```
 2. Получить API Token для доступа к webinar.ru и добавить в конфиг:
 
 * config/webinar.php

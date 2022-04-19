@@ -2,7 +2,9 @@
 
 namespace Bloodlog\WebinarClient\Providers;
 
+use GuzzleHttp\Client as HttpClient;
 use Illuminate\Support\ServiceProvider;
+use Bloodlog\WebinarClient\WebinarClient;
 
 class WebinarClientProvider extends ServiceProvider
 {
@@ -24,5 +26,22 @@ class WebinarClientProvider extends ServiceProvider
         parent::register();
 
         $this->mergeConfigFrom(__DIR__ . '/../../config/webinar.php', 'webinar');
+
+        $this->registerClient();
+    }
+
+    /**
+     * @return void
+     */
+    protected function registerClient()
+    {
+        $this->app->bind(WebinarClient::class, function () {
+            return new WebinarClient(new HttpClient([
+                'base_uri' => config('services.webinar.base_url'),
+                'headers' => [
+                    'x-auth-token' => config('services.webinar.token'),
+                ],
+            ]));
+        });
     }
 }

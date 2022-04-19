@@ -11,24 +11,34 @@ use Bloodlog\WebinarClient\Api\Registration;
 class WebinarClientTest extends TestCase
 {
 
+    /**
+     * @var WebinarClient
+     */
+    private $client;
+
+    /**
+     * @return void
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        /** @var WebinarClient client */
+        $this->client = app()->make(WebinarClient::class);
+    }
+
     public function testWebinarClient()
     {
-        $client = new WebinarClient();
-
-        $this->assertInstanceOf(HttpClient::class, $client->getClient());
+        $this->assertInstanceOf(HttpClient::class, $this->client->getClient());
     }
 
     public function testEvents()
     {
-        $client = new WebinarClient();
-
-        $this->assertInstanceOf(Events::class, $client->events());
+        $this->assertInstanceOf(Events::class, $this->client->events());
     }
 
     public function testRegistration()
     {
-        $client = new WebinarClient();
-
-        $this->assertInstanceOf(Registration::class, $client->registration());
+        $this->assertInstanceOf(Registration::class, $this->client->registration());
     }
 }
