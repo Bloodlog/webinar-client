@@ -42,20 +42,7 @@ class WebinarClient
      */
     public function getClient(): Client
     {
-        return $this->client ?: $this->createClient();
-    }
-
-    /**
-     * @return Client
-     */
-    private function createClient(): Client
-    {
-        return new Client([
-            'base_uri' => config('webinar.base_url'),
-            'headers' => [
-                'x-auth-token' => config('webinar.token'),
-            ],
-        ]);
+        return $this->client;
     }
 
     /**
