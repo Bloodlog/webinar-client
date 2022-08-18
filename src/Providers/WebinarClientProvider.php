@@ -37,9 +37,9 @@ class WebinarClientProvider extends ServiceProvider
     {
         $this->app->bind(WebinarClient::class, function () {
             return new WebinarClient(new HttpClient([
-                'base_uri' => config('services.webinar.base_url'),
+                'base_uri' => config('webinar.base_url'),
                 'headers' => [
-                    'x-auth-token' => config('services.webinar.token'),
+                    'x-auth-token' => config('webinar.token'),
                 ],
             ]));
         });
